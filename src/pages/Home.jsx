@@ -79,17 +79,17 @@ const Home = () => {
         <ul className="flex justify-center gap-10">
           {[
             {
-              img: "./public/icon_1_150x150.png",
+              img: "./public/icon1.png",
               bg: "#DCC9A1",
               label: "Africa",
             },
             {
-              img: "./public/icon_2_150x150.png",
+              img: "./public/icon2.png",
               bg: "#A3C6C4",
               label: "Classes",
             },
             {
-              img: "./public/icon_3_150x150.png",
+              img: "./public/icon3.png",
               bg: "#8BA888",
               label: "Sizes",
             },

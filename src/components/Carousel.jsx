@@ -61,7 +61,7 @@ export function CarouselWithContent() {
       </div>
       <div className="relative h-full w-full">
         <img
-          src="/public/fox-img mmm.jpg"
+          src="/public/fox-imgmmm.jpg"
           alt="image 3"
           className="h-full w-full object-cover"
         />
