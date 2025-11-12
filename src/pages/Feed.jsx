@@ -48,7 +48,7 @@ const Feed = () => {
               <CardHeader shadow={false} floated={false} className="h-72">
                 <img
                   src={country.img}
-                  alt="card-image"
+                  alt={country.img}
                   className="h-full w-full object-cover"
                 />
               </CardHeader>
