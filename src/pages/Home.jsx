@@ -69,7 +69,7 @@ const Home = () => {
             </Button>
           </Link>
         </div>
-        <img src="/public/turtule.png" className="w-[810px] h-[710px] xl:w-[750px] xl:h-[700px] lg:w-[480px] lg:h-[380px]
+        <img src="./public/turtule.png" className="w-[810px] h-[710px] xl:w-[750px] xl:h-[700px] lg:w-[480px] lg:h-[380px]
         md:w-[480px] md:h-[400px] sm:w-[480px] sm:h-[400px]" alt="" />
         </div>
       </section>
@@ -79,17 +79,17 @@ const Home = () => {
         <ul className="flex justify-center gap-10">
           {[
             {
-              img: "/public/icon_1_150x150.png",
+              img: "./public/icon_1_150x150.png",
               bg: "#DCC9A1",
               label: "Africa",
             },
             {
-              img: "/public/icon_2_150x150.png",
+              img: "./public/icon_2_150x150.png",
               bg: "#A3C6C4",
               label: "Classes",
             },
             {
-              img: "/public/icon_3_150x150.png",
+              img: "./public/icon_3_150x150.png",
               bg: "#8BA888",
               label: "Sizes",
             },
