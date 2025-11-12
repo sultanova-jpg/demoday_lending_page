@@ -1,5 +1,6 @@
 import { Carousel, Typography, Button } from "@material-tailwind/react";
 import { useTranslation } from "react-i18next";
+import fox from "../../public/fox-imgmmm.jpg"
 
 export function CarouselWithContent() {
   const { t, i18n } = useTranslation();
@@ -61,7 +62,7 @@ export function CarouselWithContent() {
       </div>
       <div className="relative h-full w-full">
         <img
-          src="../../public/fox-imgmmm.jpg"
+          src={fox}
           alt="image 3"
           className="h-full w-full object-cover"
         />

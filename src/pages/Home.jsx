@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import icon1 from "./../../public/icon1.png"
+import icon2 from "./../../public/icon2.png"
+import icon3 from "./../../public/icon3.png"
+import turtule from "./../../public/turtule.png"
 import {
   Card,
   CardHeader,
@@ -69,7 +73,7 @@ const Home = () => {
             </Button>
           </Link>
         </div>
-        <img src="../../public//turtule.png" className="w-[810px] h-[710px] xl:w-[750px] xl:h-[700px] lg:w-[480px] lg:h-[380px]
+        <img src={turtule} className="w-[810px] h-[710px] xl:w-[750px] xl:h-[700px] lg:w-[480px] lg:h-[380px]
         md:w-[480px] md:h-[400px] sm:w-[480px] sm:h-[400px]" alt="" />
         </div>
       </section>
@@ -79,17 +83,17 @@ const Home = () => {
         <ul className="flex justify-center gap-10">
           {[
             {
-              img: "../../public/icon1.png",
+              img: icon1,
               bg: "#DCC9A1",
               label: "Africa",
             },
             {
-              img: "../../public/icon2.png",
+              img: icon2,
               bg: "#A3C6C4",
               label: "Classes",
             },
             {
-              img: "../../public/icon3.png",
+              img: icon3,
               bg: "#8BA888",
               label: "Sizes",
             },
