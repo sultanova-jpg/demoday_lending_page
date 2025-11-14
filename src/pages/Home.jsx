@@ -210,12 +210,7 @@ const Home = () => {
                   >
                     {country.name}
                   </Typography>
-                  <Typography
-                    color="blue-gray"
-                    className="font-medium text-md mb-2  dark:text-[#A8D29B]"
-                  >
-                    {country.capital}
-                  </Typography>
+                 
                   <Typography
                     variant="small"
                     color="gray"
