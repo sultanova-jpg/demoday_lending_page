@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar,
   Collapse,
@@ -26,14 +26,16 @@ export function NavbarWithSolidBackground() {
   const changeMode = useDarkMode((state) => state.changeMode)
   const [showLangMenu, setShowLangMenu] = useState(false);
 
-  function change() {
-    if (isDark) {
+
+    useEffect(()=>{
+      if (isDark) {
       document.body.classList.add("dark");
     }else{
       document.body.classList.remove("dark");
     }
+    }, [isDark])
     
-  }
+
 
   React.useEffect(() => {
     const onResize = () => window.innerWidth >= 960 && setOpenNav(false);
@@ -67,10 +69,7 @@ export function NavbarWithSolidBackground() {
       <Item to="/about">{t("about us")}</Item>
 
       {/* 🌙 Dark mode */}
-      <button className="py-2 px-4" onClick={()=>{
-        change()
-        changeMode()
-      }}>
+      <button className="py-2 px-4" onClick={changeMode}>
         {isDark ? (
           <IoSunnyOutline className="text-yellow-900" />
         ) : (
