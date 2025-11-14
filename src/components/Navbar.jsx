@@ -11,6 +11,7 @@ import { BsMoon } from "react-icons/bs";
 import { IoSunnyOutline } from "react-icons/io5";
 import { MdLanguage } from "react-icons/md";
 import { useTranslation } from "react-i18next";
+import useDarkMode from "../store/DarkModeStore";
 
 export function NavbarWithSolidBackground() {
   const { t, i18n } = useTranslation();
@@ -21,12 +22,17 @@ export function NavbarWithSolidBackground() {
 
   const [openNav, setOpenNav] = useState(false);
   const { pathname } = useLocation();
-  const [isDark, setIsDark] = useState(false);
+  const isDark = useDarkMode((state) => state.isDark)
+  const changeMode = useDarkMode((state) => state.changeMode)
   const [showLangMenu, setShowLangMenu] = useState(false);
 
   function change() {
-    document.documentElement.classList.toggle("dark");
-    setIsDark(!isDark);
+    if (isDark) {
+      document.body.classList.add("dark");
+    }else{
+      document.body.classList.remove("dark");
+    }
+    
   }
 
   React.useEffect(() => {
@@ -61,7 +67,10 @@ export function NavbarWithSolidBackground() {
       <Item to="/about">{t("about us")}</Item>
 
       {/* 🌙 Dark mode */}
-      <button className="py-2 px-4" onClick={change}>
+      <button className="py-2 px-4" onClick={()=>{
+        change()
+        changeMode()
+      }}>
         {isDark ? (
           <IoSunnyOutline className="text-yellow-900" />
         ) : (
