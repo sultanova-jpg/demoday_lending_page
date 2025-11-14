@@ -198,7 +198,7 @@ const Home = () => {
               bg-white dark:bg-[#18211E] dark:border-none">
                 <CardHeader shadow={false} floated={false} className="h-72">
                   <img
-                    src={country.image}
+                    src={country.img}
                     alt="card-image"
                     className="h-full w-full object-cover"
                   />
