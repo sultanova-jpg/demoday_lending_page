@@ -22,20 +22,17 @@ export function NavbarWithSolidBackground() {
 
   const [openNav, setOpenNav] = useState(false);
   const { pathname } = useLocation();
-  const isDark = useDarkMode((state) => state.isDark)
-  const changeMode = useDarkMode((state) => state.changeMode)
+  const isDark = useDarkMode((state) => state.isDark);
+  const changeMode = useDarkMode((state) => state.changeMode);
   const [showLangMenu, setShowLangMenu] = useState(false);
 
-
-    useEffect(()=>{
-      if (isDark) {
+  useEffect(() => {
+    if (isDark) {
       document.body.classList.add("dark");
-    }else{
+    } else {
       document.body.classList.remove("dark");
     }
-    }, [isDark])
-    
-
+  }, [isDark]);
 
   React.useEffect(() => {
     const onResize = () => window.innerWidth >= 960 && setOpenNav(false);
@@ -61,14 +58,16 @@ export function NavbarWithSolidBackground() {
   );
 
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 
-    lg:flex-row lg:items-center lg:gap-3 dark:text-[#A8D29B]">
+    <ul
+      className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 
+    lg:flex-row lg:items-center lg:gap-3 dark:text-[#A8D29B]"
+    >
       <Item to="/">{t("home")}</Item>
       <Item to="/animal">{t("animals")}</Item>
       <Item to="/feed">{t("feed")}</Item>
       <Item to="/about">{t("about us")}</Item>
 
-      {/* 🌙 Dark mode */}
+      {/* DARK MODE */}
       <button className="py-2 px-4" onClick={changeMode}>
         {isDark ? (
           <IoSunnyOutline className="text-yellow-900" />
@@ -77,8 +76,8 @@ export function NavbarWithSolidBackground() {
         )}
       </button>
 
-      {/* 🌍 Language dropdown */}
-      <div className="relative">
+      {/* LANGUAGE MENU */}
+      <div className="static lg:relative">
         <button
           onClick={() => setShowLangMenu(!showLangMenu)}
           className="flex items-center gap-1 text-[#0A2317] dark:text-[#A8D29B] hover:text-[#28604F] transition"
@@ -87,11 +86,23 @@ export function NavbarWithSolidBackground() {
         </button>
 
         {showLangMenu && (
-          <div className="absolute right-0 mt-2 w-28 rounded-lg shadow-lg bg-white dark:bg-[#2a4b3d] text-[#0A2317] dark:text-[#A8D29B] border border-gray-200 dark:border-[#3B6145] z-50">
+          <div
+            className="
+              absolute lg:absolute 
+              right-0 mt-2 w-28 
+              rounded-lg shadow-lg bg-white dark:bg-[#2a4b3d]
+              text-[#0A2317] dark:text-[#A8D29B]
+              border border-gray-200 dark:border-[#3B6145] 
+              z-50
+
+              lg:top-full
+              top-auto left-0 lg:left-auto
+            "
+          >
             <ul className="text-sm">
               <li
                 onClick={() => translation("en")}
-                className="px-3 py-2 hover:bg-[#E8D8B4]/50 dark:hover:bg-[#3B6145] cursor-pointer rounded-t-lg"
+                className="px-3 py-2 hover:bg-[#E8D8B4]/50 dark:hover:bg-[#3B6145] cursor-pointer"
               >
                 English
               </li>
@@ -103,7 +114,7 @@ export function NavbarWithSolidBackground() {
               </li>
               <li
                 onClick={() => translation("uz")}
-                className="px-3 py-2 hover:bg-[#E8D8B4]/50 dark:hover:bg-[#3B6145] cursor-pointer rounded-b-lg"
+                className="px-3 py-2 hover:bg-[#E8D8B4]/50 dark:hover:bg-[#3B6145] cursor-pointer"
               >
                 O‘zbek
               </li>
@@ -120,10 +131,10 @@ export function NavbarWithSolidBackground() {
         <Navbar
           className="
            mb-3 sticky top-3 z-50 w-full
-    rounded-2xl lg:rounded-full
-    border border-white/50
-    bg-white/70 backdrop-blur px-4
-    dark:bg-[#264d3d] dark:border-none
+           rounded-2xl lg:rounded-full
+           border border-white/50
+           bg-white/70 backdrop-blur px-4
+           dark:bg-[#264d3d] dark:border-none
           "
         >
           <div className="flex items-center justify-between">
@@ -149,10 +160,10 @@ export function NavbarWithSolidBackground() {
           </div>
 
           <Collapse open={openNav}>
-  <div className="pt-3 lg:hidden bg-white dark:bg-[#264d3d] rounded-2xl shadow-md">
-    {navList}
-  </div>
-</Collapse>
+            <div className="pt-3 lg:hidden bg-white dark:bg-[#264d3d] rounded-2xl shadow-md">
+              {navList}
+            </div>
+          </Collapse>
         </Navbar>
       </div>
     </div>
