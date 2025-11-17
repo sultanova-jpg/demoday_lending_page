@@ -115,15 +115,15 @@ export function NavbarWithSolidBackground() {
   );
 
   return (
-    // ⬇️ убрали max-h и mx-5, добавили контейнер и обрезку переполнения
-    <div className="pt-4 overflow-x-clip">
+    <div className="pt-4 overflow-x-clip ">
       <div className="max-w-[1200px] mx-auto px-4">
         <Navbar
           className="
-            mb-3 sticky top-3 z-50 w-full
-            rounded-full border border-white/50
-            bg-white/70 backdrop-blur px-4
-            dark:bg-[#264d3d] dark:border-none
+           mb-3 sticky top-3 z-50 w-full
+    rounded-2xl lg:rounded-full
+    border border-white/50
+    bg-white/70 backdrop-blur px-4
+    dark:bg-[#264d3d] dark:border-none
           "
         >
           <div className="flex items-center justify-between">
@@ -137,7 +137,7 @@ export function NavbarWithSolidBackground() {
 
             <IconButton
               variant="text"
-              className="ml-2 rounded-full text-[#0A2317] lg:hidden"
+              className="ml-2 rounded-lg text-[#0A2317] lg:hidden"
               onClick={() => setOpenNav((v) => !v)}
             >
               {openNav ? (
@@ -149,8 +149,10 @@ export function NavbarWithSolidBackground() {
           </div>
 
           <Collapse open={openNav}>
-            <div className="pt-3 lg:hidden">{navList}</div>
-          </Collapse>
+  <div className="pt-3 lg:hidden bg-white dark:bg-[#264d3d] rounded-2xl shadow-md">
+    {navList}
+  </div>
+</Collapse>
         </Navbar>
       </div>
     </div>
