@@ -281,6 +281,34 @@ const Home = () => {
                   >
                     {country.name}
                   </Typography>
+
+                  <div className="mb-3 flex flex-wrap gap-2">
+                  {country.place && (
+                    <Button
+                      ripple={false}
+                      className="
+                        bg-[#E8D8B4] text-[#0A2317]
+                        rounded-full px-3 py-1 text-xs sm:text-sm
+                        dark:text-[#A8D29B] dark:bg-[#3B6145]
+                      "
+                    >
+                      {country.place}
+                    </Button>
+                  )}
+
+                  {country.classes && (
+                    <Button
+                      ripple={false}
+                      className="
+                        bg-[#CFE3C9] text-[#0A2317]
+                        rounded-full px-3 py-1 text-xs sm:text-sm
+                        dark:text-[#A8D29B] dark:bg-[#3B6145]
+                      "
+                    >
+                      {country.classes}
+                    </Button>
+                  )}
+                </div>
                   <Typography
                     variant="small"
                     color="gray"
