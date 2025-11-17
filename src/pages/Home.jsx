@@ -283,7 +283,7 @@ const Home = () => {
                   </Typography>
 
                   <div className="mb-3 flex flex-wrap gap-2">
-                  {country.place && (
+                  { (
                     <Button
                       ripple={false}
                       className="
